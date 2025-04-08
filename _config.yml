@@ -8,7 +8,7 @@ twitter_username: legacv
 github_username:  legacv
 
 # Build settings
-theme: hacker-theme
+theme: minima
 plugins:
   - jekyll-feed
 
