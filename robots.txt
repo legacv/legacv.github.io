@@ -1,2 +1,4 @@
+# what are you doing here? go read my about page!
+
 User-agent: *
 Disallow: /contact.html
