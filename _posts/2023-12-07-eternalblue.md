@@ -12,4 +12,4 @@ Around the end of 2023, I was tasked with writing a paper on any topic we'd cove
 _Post published 06/29/2025, dated 12/07/2023 for chronology purposes._
 
 [paper]: https://legacv.github.io/files/legacv-wannacry-paper.pdf
-[again]: https://legacv.github.io/2024-12-01-strain-theft
+[again]: https://legacv.github.io/strain-theft

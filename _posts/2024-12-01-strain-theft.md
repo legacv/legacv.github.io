@@ -10,4 +10,4 @@ At the end of 2024, almost a year after I wrote about [EternalBlue][before], I w
 _Post published 06/29/2025, dated 12/01/2024 for chronology purposes._
 
 [paper]: https://legacv.github.io/files/legacv-strain-theft.pdf
-[before]: https://legacv.github.io/2023-12-07-eternalblue
+[before]: https://legacv.github.io/eternalblue

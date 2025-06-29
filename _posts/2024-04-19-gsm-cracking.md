@@ -12,4 +12,4 @@ Please see [my recent cloud paper][cloud] for a more accurate representation of 
 _Post published 06/29/2025, dated 04/19/2024 for chronology purposes._
 
 [paper]: https://legacv.github.io/files/legacv-gsm-cracking.pdf
-[cloud]: https://legacv.github.io/2025-05-02-rehosting
+[cloud]: https://legacv.github.io/rehosting
