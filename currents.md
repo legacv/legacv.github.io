@@ -6,10 +6,13 @@ title: Currents
 ### Currently reading
 - [How to Measure Anything in Cybersecurity Risk][risk]
 - [Silence on the Wire][silence]
+
 ### Currently playing
 - Monster Hunter: World
+
 ### Currently watching
 - Cyberpunk Edgerunners
+
 ### Currently listening to
 - Social Cues - Cage the Elephant
 
