@@ -1,5 +1,5 @@
 ---
-layout: music
+layout: default
 title: Currents
 ---
 
@@ -18,4 +18,5 @@ title: Currents
 
 [risk]: https://onlinelibrary.wiley.com/doi/book/10.1002/9781119892335
 [silence]: https://nostarch.com/silence.htm
-[music]: https://www.youtube.com/watch?v=eCqdiwxMy4k
+[music]: https://www.youtube.com/watch?v=eCqdiwxMy4k?autoplay=1&loop=1&controls=0
+https://www.youtube.com/watch?v=eCqdiwxMy4k?autoplay=1&loop=1&controls=0
