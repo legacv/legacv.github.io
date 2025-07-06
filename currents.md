@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: music
 title: Currents
 ---
 
@@ -14,7 +14,8 @@ title: Currents
 - Cyberpunk Edgerunners
 
 ### Currently listening to
-- Social Cues - Cage the Elephant
+- [Social Cues - Cage the Elephant][music]
 
 [risk]: https://onlinelibrary.wiley.com/doi/book/10.1002/9781119892335
 [silence]: https://nostarch.com/silence.htm
+[music]: https://www.youtube.com/watch?v=eCqdiwxMy4k

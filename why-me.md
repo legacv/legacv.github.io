@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Why me?
-published: false
 ---
 
 Hey, you found this page when it wasn't quite finished yet. Try again next week?
