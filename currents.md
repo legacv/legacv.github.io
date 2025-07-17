@@ -9,6 +9,7 @@ title: Currents
 
 ### Currently playing
 - Monster Hunter: World
+- Vintage Story
 
 ### Currently watching
 - Cyberpunk Edgerunners
