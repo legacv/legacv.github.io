@@ -1,9 +1,7 @@
 ---
 layout: page
-title: Why me?
+title: Tools & Skills
 ---
-
-Hey, you found this page when it wasn't quite finished yet. Try again next week?
 
 What follows is a non-exhaustive list of skills I have and tools I've worked with, meant for keyword searches.
 
@@ -14,7 +12,6 @@ What follows is a non-exhaustive list of skills I have and tools I've worked wit
 - C
 - Bash
 - Python
-- PowerShell
 - Win32 API
 - OpenSSL
 - SQL
@@ -73,6 +70,7 @@ What follows is a non-exhaustive list of skills I have and tools I've worked wit
 - Helm
 - VirtualBox
 - AWS GuardDuty, AWS EC2, AWS IAM
+- Velociraptor
 
 ### Offensive Security
 
@@ -83,11 +81,12 @@ What follows is a non-exhaustive list of skills I have and tools I've worked wit
 - Burp Suite
 - Bloodhound
 - Wappalyzer
-- nmap, NSE, ffuf, gobuster, dirbuster, hydra, impacket, aircrack-ng, wireshark
+- nmap, NSE, ffuf, gobuster, dirbuster, hydra, impacket, aircrack-ng, Wireshark
 - john the ripper, hashcat, linpeas, winpeas, Autopsy, netcat, setoolkit, sqlmap
 - Ghidra
 - Google Dorks
 - Shodan
+- Snaffler
 
 #### Frameworks, etc.
 
