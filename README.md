@@ -1,4 +1,4 @@
-Hi! This is legacv's website. Go look at https://legacv.github.io/, what are you doing here?
+Hi! This is legacv's website. Go look at https://legacv.me/, what are you doing here?
 
 ## License
 
