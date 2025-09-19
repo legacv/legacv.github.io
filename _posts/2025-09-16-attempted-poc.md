@@ -36,21 +36,32 @@ If you don't, then I fear you may be SOL. Below is the post I wrote during my re
 Figured since I'm a student I might as well have something to show for it. Wordpress plugin vulns have an incredibly special place in my heart, and so do the people that write public exploits. Here's my entry.
 
 1) find appropriate CVE on [cvefeed](https://cvefeed.io/vuln/detail/CVE-2025-8417) (no public exploits, higher criticality, RCE, unauth preferred)
+
 2) find plugin on wordpress.com
+
 3) it's gone?
+
 4) oh wrong site
+
 5) find plugin on [wordpress.org](https://wordpress.org/plugins/intelligent-importer/)
+
 6) it's down! no doubt because of the unauthenticated arbitrary RCE...
+
 7) [wayback machine](https://web.archive.org/web/20250712032821/https://wordpress.org/plugins/intelligent-importer/) indexed it, thankfully
+
 8) [link to the download](https://web.archive.org/web/20250712032821/https://downloads.wordpress.org/plugin/intelligent-importer.5.1.4.zip) exists, but hasn't been indexed
+
 9) the [downloads.wordpress.org base link](https://downloads.wordpress.org/plugin/intelligent-importer.5.1.4.zip), however, is still perfectly functional. (there's also a [github mirror](https://github.com/common-repository/intelligent-importer))
+
 10) i have the plugin!
-11) [download and set up XAMPP and wordpress](https://medium.com/@aawesomespace/how-to-host-a-wordpress-website-on-your-own-windows-1c9a91c5ed71) for local testing [1]
+
+11) [download and set up XAMPP and wordpress](https://medium.com/@aawesomespace/how-to-host-a-wordpress-website-on-your-own-windows-1c9a91c5ed71) for local testing \[1]
+
 12) we do a little code review while xampp is installing...
 
 "Vulnerable to PHP code injection" \[...] "due to reliance on a guessable numeric token (e.g. ?key= 900001705)" \[...] "combined with the unsafe use of eval() on user-supplied input." Makes RCE possible "via a forged request granted they can guess or brute-force the numeric key." So, find the POST params, find where eval() is being used on user-supplied input, how the key is being generated, and how to guess or brute-force it; then stuff that into a bash script that takes a URL and path as arguments to execute `sleep()` (because we're moral here).
 
-There are two places eval() is being called [2]: 
+There are two places eval() is being called \[2]: 
 ![First in communication.php](../assets/image.png)
 
 ![Second in communication.php](../assets/image-1.png)
@@ -59,9 +70,9 @@ These are part of a large if/else statement meant to handle various POSTs(??), t
 
 Problem: how and when are these POSTs being made? After sniffing around, I found that a `POST /wordpress/wp-content/plugins/intelligent-importer/communication.php` gives a 200 OK, meaning this could be our endpoint. I tried a couple simple payloads before realizing it wasn't... working, so I looked back at the code and realized absolutely nothing else referenced `setCommandes` or its ilk, so another program must be making these POSTs. 
 
-Enter intelligent_importer.exe, or Grimport Crawler. In the WP module for the plugin there's a "recommended method" for running the analysis, which takes you to a link download for the Intelligent Importer installer. Installed it. Opened it. Didn't like the interface. Decompiled the `run.jar` using [an online decompiler](https://www.decompiler.com/jar/5d073a65e3f34728b84f5804c924615d/run.jar) [3]. Found our POSTing endpoint; it's actually just `/wordpress/?megaimporter_communication=1&clef=[CLEF]`. Clef is French for 'key,' and it's our "guessable" numeric token. 
+Enter intelligent_importer.exe, or Grimport Crawler. In the WP module for the plugin there's a "recommended method" for running the analysis, which takes you to a link download for the Intelligent Importer installer. Installed it. Opened it. Didn't like the interface. Decompiled the `run.jar` using [an online decompiler](https://www.decompiler.com/jar/5d073a65e3f34728b84f5804c924615d/run.jar) \[3]. Found our POSTing endpoint; it's actually just `/wordpress/?megaimporter_communication=1&clef=[CLEF]`. Clef is French for 'key,' and it's our "guessable" numeric token. 
 
-`clef` is created upon plugin installation by nabbing a random value between 1 and 999,999,999, see below. Which only gives us about a billion options. How the hell am I going to guess that? [4] [5] I'm starting to see why the CVE wasn't given a 9.8.
+`clef` is created upon plugin installation by nabbing a random value between 1 and 999,999,999, see below. Which only gives us about a billion options. How the hell am I going to guess that? \[4] \[5] I'm starting to see why the CVE wasn't given a 9.8.
 
 `update_option('megaimporter_clefacces',mt_rand(1,999999999));`
 
@@ -91,16 +102,16 @@ thanks for your time :)
 Footnotes:
 
 
-[1]: "why not docker?!" you may ask. shrimple. because docker desktop was giving me way too many headaches (especially with the database connection), and my server is currently sitting unplugged in the living room, so no VM for me
+\[1]: "why not docker?!" you may ask. shrimple. because docker desktop was giving me way too many headaches (especially with the database connection), and my server is currently sitting unplugged in the living room, so no VM for me
 
-[2]: lol, said the scorpion. lmao
+\[2]: lol, said the scorpion. lmao
 
 ![snyk](../assets/image-2.png)
 
-[3]: WHY IS THERE SO MUCH SHIT IN THIS PROGRAM OH MY GOD
+\[3]: WHY IS THERE SO MUCH SHIT IN THIS PROGRAM OH MY GOD
 
-[4]: "doesn't intelligent_importer have to know the `clef` somehow?" yes, you as the site owner provide it in a .grl file.
+\[4]: "doesn't intelligent_importer have to know the `clef` somehow?" yes, you as the site owner provide it in a .grl file.
 
-[5]: "can others access that grl file?" not... really. the grl file is generated by passing parameters (including the `clef`) to `grl.php` (or `bat.php`) that just concatenates a bunch of strings together. so no stealing the `clef` from that.
+\[5]: "can others access that grl file?" not... really. the grl file is generated by passing parameters (including the `clef`) to `grl.php` (or `bat.php`) that just concatenates a bunch of strings together. so no stealing the `clef` from that.
 
 [poc]: https://legacv.me/
