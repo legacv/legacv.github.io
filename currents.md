@@ -10,14 +10,15 @@ title: Currents
 ### Currently playing
 - Monster Hunter: World
 - Vintage Story
+- Portal
 
 ### Currently watching
 - Cyberpunk Edgerunners
+- Smiling Friends
 
 ### Currently listening to
-- [Social Cues - Cage the Elephant][music]
+- [Melophobia - Cage the Elephant][music]
 
 [risk]: https://onlinelibrary.wiley.com/doi/book/10.1002/9781119892335
 [silence]: https://nostarch.com/silence.htm
-[music]: https://www.youtube.com/watch?v=eCqdiwxMy4k?autoplay=1&loop=1&controls=0
-https://www.youtube.com/watch?v=eCqdiwxMy4k?autoplay=1&loop=1&controls=0
+[music]: https://www.youtube.com/watch?v=LKJ4j2rYvr0&list=PLC80P4gsPr-ZUMjAj9NgGr9yycb3fzcN_&index=2&autoplay=1&loop=1&controls=0
