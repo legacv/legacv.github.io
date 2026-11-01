@@ -1,13 +1,7 @@
----
-layout: default
----
-
-<ul>
-    {% for post in paginator.posts %}
-      <li>
-          <h2><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ post.title }}</a></h2>
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
-          <p>{{ post.content | strip_html | truncatewords:50 }}</p>
-      </li>
-    {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Under construction</h1>
+        <p>Hey, I'm rebuilding this site from scratch. Short <a href=about.html>about</a> in the meantime. Posts will be back soon-ish, as will the RSS.</p>
+    </body>
+</html>
