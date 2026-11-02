@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+}
+
+h1, h2, h3, #description {
+  text-align: center;
+  }
+  
+/*Inserts a header section with the chosen image at the top of the page. Goes before the header div.*/
+#header-image {
+  height: 200px;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,0)), url("../assets/stock-ocean.jpg") no-repeat;
+  background-size: cover;
+  margin-bottom: 30px;
+  }
+  
+/*This is where your header stuff goes. The inside uses the post-inner class like posts do, instead of having a separate class name.*/
+/*(If you want to give it different behavior, then add a #header .post-inner {} after the rules for .post-inner to make a special ruleset for it.)*/
+#header {
+  border: 0px solid #305a7f;
+  width: 80em;
+  margin: 10px auto;
+  padding-left: -1px;
+  }
+  
+/*Normally inside the header.*/
+#description {
+  padding: 10px;
+  margin: 10px auto;
+  }
+
+/*Contains the columns of posts.*/
+.column-wrapper {
+  columns: 3;
+  min-height: 80%;
+  width: 80em;
+  margin: 0 auto;
+  column-gap:10px;
+  }
+  
+/*Variable and fixed-height boxes.*/
+.post, .post-scroller {
+  display: inline-block;
+  border: 1px solid #305a7f;
+  margin: 0 auto;
+  margin-bottom:10px;
+  overflow-y: auto; /*To give fixed-height posts a scroller, and make images outside the post-inner div conform to rounded corners.*/
+  }
+  
+.post img, .post-scroller img { /*Prevent image overflow.*/
+  max-width: 100%;
+  height: auto;
+  }
+  
+/*Fixed-height box.*/
+.post-scroller {
+  height: 500px;
+  }
+  
+.post-inner { /*because padding doesn't play nice with divs directly inside columns*/
+  margin: 10px;
+  }
+  
+/*Special optional styling for images used as post headers.*/
+.post-head-image {
+  padding: 0;
+  }
+  
+/*Looks similar to footer but just covers a big section.*/
+.block-color-section {
+  background: #305a7f;
+  color: white;
+  min-height:1em;
+  margin-top: 10px;
+  margin-bottom:20px;
+  }
+  
+.block-color-inner {
+  padding:10px;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin: 0 auto;
+  }
+
+#footer {
+  background: #305a7f;
+  color: #fff;
+  min-height:1em;
+  margin-top: 10px;
+  bottom: 0;
+  }
+
+#footer a {
+  color: #ddd;
+  }
+  
+/*Variant footer. This will stick at the bottom of the page, and overlap anything that gets too close. Use only for pages too short to scroll.*/
+#footer-sticky {
+  position:fixed;
+  width: 100%;
+  background: #305a7f;
+  color: #fff;
+  min-height:1em;
+  bottom: 0;
+  margin-top: 10px;
+  margin-bottom:0;
+  }
+  
+#footer-content {
+  /*For some reason the padding needs at least 1px top and bottom or else it automatically gets a giant margin instead. I still don't know why it does that. Just don't make it 0.*/
+  padding:1px; 
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto;
+  }
+  
+  
+/*For making columns in the footer like demonstrated.*/
+.footer-columns {
+  columns: 3;
+  width: 80em;
+  margin: 0 auto;
+  column-gap:10px;
+  }
+  
+/*For when you want to make distinct columns of different stuff without a million <br>s.*/
+.footer-column {
+  text-align: left;
+  display: inline-block;
+  height:6em;
+  width: 100%;
+  padding: 10px;
+  padding-top:0;
+  }
+  
+/*Used to style lists of links without big obvious bullets.*/
+#footer li {
+  padding-left:0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  list-style-type: none;
+  }
+
+
+@media(max-width:80em) { /*Allow smaller side margins on narrower screens.*/
+  #header, #description, .column-wrapper, .footer-columns {
+    width: 90%;
+    }
+    
+  }  
+
+@media(orientation:portrait) { /*Removes columns entirely for mobile*/
+  .column-wrapper, .footer-columns {
+    columns: 1;
+    }
+  }

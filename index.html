@@ -1,7 +1,127 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="static/css/style.css">
+        <!--separate styling for the music player-->
+        <style>
+        #music-player {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #music-player {
+            height: 1.425em;
+            width: 1.425em;
+            font-size: 1.5em;
+            padding: 0.125em;
+            border-radius: 50%;
+            border: 3px dotted #ffffff;
+            background: #000000;
+            position: relative;
+            right: 0em;
+            z-index: 1200;
+            -webkit-animation: spin 2s linear infinite;
+            -webkit-animation: spin 4s linear infinite;
+            -moz-animation: spin 4s linear infinite;
+            animation: spin 4s linear infinite;
+        }
+        @-moz-keyframes spin {
+            100% {
+                -moz-transform: rotate(360deg);
+            }
+        }
+        @-webkit-keyframes spin {
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        @keyframes spin {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        #music-player:hover {
+            -webkit-animation: pop 0.3s ease;
+            animation: pop 0.3s ease;
+        }
+    </style>
+    </head>
     <body>
-        <h1>Under construction</h1>
-        <p>Hey, I'm rebuilding this site from scratch. Short <a href=about.html>about</a> in the meantime. Posts will be back soon-ish, as will the RSS.</p>
+        <div id="header-image"></div>
+        <div class="post-inner">
+            <h1>Under construction</h1>
+            <div id="description">Hey, I'm rebuilding this site from scratch. Posts will be back soon-ish, as will the RSS.</div>
+        </div>
+        <div class="column-wrapper">
+            <div class="post">
+                <div class="post-inner">
+                    <h3>About</h3>
+                    <p>Currently work at a large company making automations for our security teams. Purdue University graduate, Dec. 2025.</p>
+                    <p>Love pentesting, fencing, and anything analog. Working on a few projects on the side, including this site and some bug bounty. Come back soon!</p>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-inner">
+                    <img src="static/assets/trust-good-computer.gif">
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-inner">
+                    <img src="static/assets/strokes-stamp.webp">
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-inner">
+                    <img src="static/assets/strokes-yolo-blinkie.webp">
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-inner">
+                    <img src="static/assets/strokes-blinkie.webp">
+                </div>
+            </div>
+            <br>
+            <div class="post">
+                <div class="post-inner">
+                    <a href="https://newlambda.neocities.org/"><img src="static/assets/secretary-bird.png"></a>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-inner">
+                    <div id="music-player">
+                        <img src="static/assets/pepsi.gif">
+                        <!--audio tag will go here when i figure that out. hi-->
+                    </div>
+                    <script>
+                        document.getElementById("music-player").onclick = function() {
+                            var audio = document.getElementById("audio");
+                            if (audio.paused) audio.play();
+                            else audio.pause();
+                        };
+                    </script>                
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-inner">
+                    <a href="https://lejlart.com/apple.html"><img src="static/assets/potion_apple.gif"></a>
+                </div>
+            </div>
+            <!--columns with posts go here-->
+        </div>
+        <!--start footer-->
+        <div id="footer">
+            <div id="footer-content">
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <ul>
+                            <li><a href="https://legacv.me">Home</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column"></div>
+                </div>
+            </div>
+        </div>
+        <!--end footer-->
     </body>
 </html>
